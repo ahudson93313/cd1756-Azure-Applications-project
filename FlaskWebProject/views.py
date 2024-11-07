@@ -84,6 +84,7 @@ def authorized():
     if request.args.get('state') != session.get("state"):
         return redirect(url_for("home"))  # No-OP. Goes back to Index page
     if "error" in request.args:  # Authentication/Authorization failure
+        app.logger.warning("Invalid login attempt. No code returned")
         app.logger.warning("invalid login attempt. No code returned")
         return render_template("auth_error.html", result=request.args)
     if request.args.get('code'):
@@ -94,6 +95,7 @@ def authorized():
              scopes=Config.SCOPE,
              redirect_uri=url_for('authorized', _external=True, _scheme='https'))
         if "error" in result:
+            app.logger.warning("Invalid login attempt. Code returned")
             app.logger.warning("invalid login attempt.code returned")
             return render_template("auth_error.html", result=result)
         session["user"] = result.get("id_token_claims")
