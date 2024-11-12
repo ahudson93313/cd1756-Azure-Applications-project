@@ -3,9 +3,9 @@ Resource Group Name: cms
 
 2. SQL Database
 DB name: cms
-Server: cms1234.database.windows.net
+Server: cms1111.database.windows.net
 DB region: us-east
-Admin login: csadmin
+Admin login: cmsadmin
 Admin password: A123456!
 Resource group: cms
 DB workload env: Development
@@ -16,13 +16,13 @@ Run SQL queries in sql_scripts/ directory after completion, starting from the us
 
 3. Storage Account
 Resource group: cms
-Storage account name: images1233 (needs to be unique)
+Storage account name: images12332 (needs to be unique)
 Advanced - Allow enabling anonymous access on individual containers: Enable
 Advanced - Access tier: Cool
 Network access: Enable public access from all networks (the default)
 Create container named "images". Set its access level to Container.
 From Security + networking > Access keys:
-Blob Storage key: i9CnYaI9jOAutwAo7Lg9huZqme0Ub55as4Wn9Bm7s3dXarNiRAXZCMstT80tr1RB2+7ueo0Cmszy+AStFZNo0A==
+Blob Storage key: q0dkl5ncg6K20gWHovAkNv/6zqglIE5eSBhV0sL/CrFdTSgziP6NDUAofBnxrpRNAg79V6a5E7wA+AStrSRZIw==
 
 
 4. Microsoft Entra ID
@@ -31,9 +31,9 @@ Name: cmsEntraID
 Who can use? "Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)"
 4.2. Secret Creation
 Secret description: test
-Secret Key: 5f0e7bc9-83e9-4493-b814-f4c512295c40
-Client Secret: vTq8Q~G.YTyUa2yJKgTGzu3EgBeSUYAn~PKoAdhf
-Application (client) ID: 2a09207f-3346-4430-861d-5b9af282b26b
+Secret Key: 0f0f4aef-8b08-4a95-aeee-4dd7b3cce693
+Client Secret:QI08Q~1U61~xQsDO3I1vVnoj5aDBYyv3O7q3Hb4F
+Application (client) ID: 96a6f9ff-eb70-4fb3-9b76-9839238870c4
 
 5. Application
 Name: udacitycms1234.azurewebsites.net
@@ -43,16 +43,16 @@ If you are getting a "Validation failed for a resource" error, pick a different 
 After creation:
 
 Settings -> Environment variables - Add the following variables (sample values are included, replace them with your values):
-BLOB_ACCOUNT: images1233
+BLOB_ACCOUNT: images12332
 BLOB_CONTAINER: images
-BLOB_STORAGE_KEY: i9CnYaI9jOAutwAo7Lg9huZqme0Ub55as4Wn9Bm7s3dXarNiRAXZCMstT80tr1RB2+7ueo0Cmszy+AStFZNo0A==
-SQL_SERVER: cms1234.database.windows.net
+BLOB_STORAGE_KEY: q0dkl5ncg6K20gWHovAkNv/6zqglIE5eSBhV0sL/CrFdTSgziP6NDUAofBnxrpRNAg79V6a5E7wA+AStrSRZIw==
+SQL_SERVER: cms1111.database.windows.net
 SQL_DATABASE: cms
 SQL_USER_NAME: cmsadmin
 SQL_PASSWORD: A123456!
-CLIENT_SECRET: vTq8Q~G.YTyUa2yJKgTGzu3EgBeSUYAn~PKoAdhf
-SECRET_KEY: 5f0e7bc9-83e9-4493-b814-f4c512295c40
-CLIENT_ID: 2a09207f-3346-4430-861d-5b9af282b26b
+CLIENT_SECRET:QI08Q~1U61~xQsDO3I1vVnoj5aDBYyv3O7q3Hb4F
+SECRET_KEY: 0f0f4aef-8b08-4a95-aeee-4dd7b3cce693
+CLIENT_ID: 96a6f9ff-eb70-4fb3-9b76-9839238870c4
 Deployment Center
 Source: GitHub
 Pick the repo that contains the starter files.
